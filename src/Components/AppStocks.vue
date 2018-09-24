@@ -3,5 +3,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      stocks: ['google', 'dell', 'amd', 'tesla']
+    };
+  }
+};
 </script>

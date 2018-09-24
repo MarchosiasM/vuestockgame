@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stock card renders properly 1`] = `
+<div>
+  
+  Pied Piper 26
+  
+  <div
+    class="form-group"
+  >
+    <input
+      class="form-control"
+      type="text"
+    />
+     
+    <button />
+  </div>
+</div>
+`;
