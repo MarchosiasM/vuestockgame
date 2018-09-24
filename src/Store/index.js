@@ -50,6 +50,9 @@ const store = new Vuex.Store({
       context.commit('depositFunds', payload.value);
     },
     buyStocks(context, payload) {
+      if (payload.count < 0) {
+        return;
+      }
       const price = payload.count * payload.price;
       context.commit('withdrawFunds', price);
       context.commit('addStocks', {

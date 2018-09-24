@@ -1,43 +1,14 @@
-import { mount, createLocalVue } from '@vue/test-utils';
-import Vuex from 'vuex';
+import { mount } from '@vue/test-utils';
 import AppStocks from '../../Components/AppStocks.vue';
+import stateObj from './store/store';
 
-const localVue = createLocalVue();
-
-localVue.use(Vuex);
+const { store: impStore, localVue } = stateObj;
 
 let store;
 
 describe('App Stocks', () => {
   beforeEach(() => {
-    store = new Vuex.Store({
-      state: {
-        funds: 10000,
-        personalPortfolio: [],
-        companies: [
-          {
-            index: 1,
-            name: 'google',
-            price: 130,
-          },
-          {
-            index: 2,
-            name: 'amd',
-            price: 130,
-          },
-          {
-            index: 3,
-            name: 'tesla',
-            price: 130,
-          },
-          {
-            index: 4,
-            name: 'yahoo',
-            price: 130,
-          },
-        ],
-      },
-    });
+    store = Object.assign(impStore);
   });
   it('renders correctly', () => {
     const wrapper = mount(AppStocks, { store, localVue });
