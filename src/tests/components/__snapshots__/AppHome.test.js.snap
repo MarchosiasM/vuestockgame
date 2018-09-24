@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home element renders correctly 1`] = `
+<div
+  class="container"
+>
+  <h1>
+    Trade or View Your Portfolio
+  </h1>
+   
+  <p>
+    You may Save & Load your Data
+  </p>
+   
+  <p>
+    Click on 'End Day' to begin a new Day!
+  </p>
+   
+  <hr />
+   
+  <h2>
+    Your Funds: 10000
+  </h2>
+</div>
+`;

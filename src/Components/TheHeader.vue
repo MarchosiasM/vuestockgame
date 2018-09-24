@@ -1,7 +1,8 @@
 <template>
-  <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a href="#" class="navbar-brand">Home</a>
+      <router-link to="/" href="#" class="navbar-brand" @click="$router.push('home')"><a>
+        Stocks App
+        </a></router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -9,18 +10,15 @@
         </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a href="#" class="nav-link">
-              Home
-            </a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link">
+            <router-link to="/stocks">
+            <a class="nav-link" @click="$router.push('stocks')">
               Stocks
             </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
+            <a class="nav-link" >
               Portfolio
             </a>
           </li>
@@ -42,7 +40,6 @@
         </ul>
       </div>
     </nav>
-  </div> 
 </template>
 
 <script>

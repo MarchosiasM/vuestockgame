@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import StockCard from '../../Components/StockCard.vue';
+import StockCard from '../../Components/AppStocksCard.vue';
 
 describe('Stock card', () => {
   const wrapper = mount(StockCard);
