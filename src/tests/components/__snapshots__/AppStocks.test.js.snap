@@ -1,3 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Stocks renders correctly 1`] = `<div />`;
+exports[`App Stocks renders correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="row"
+  >
+    <div>
+      <div
+        class="app-stocks-card"
+      >
+        <p>
+          Stock: google Price: 130
+        </p>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            class="form-control"
+            type="text"
+          />
+           
+          <button
+            class="btn btn-primary"
+          >
+            Purchase
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="app-stocks-card"
+      >
+        <p>
+          Stock: amd Price: 130
+        </p>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            class="form-control"
+            type="text"
+          />
+           
+          <button
+            class="btn btn-primary"
+          >
+            Purchase
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="app-stocks-card"
+      >
+        <p>
+          Stock: tesla Price: 130
+        </p>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            class="form-control"
+            type="text"
+          />
+           
+          <button
+            class="btn btn-primary"
+          >
+            Purchase
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="app-stocks-card"
+      >
+        <p>
+          Stock: yahoo Price: 130
+        </p>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            class="form-control"
+            type="text"
+          />
+           
+          <button
+            class="btn btn-primary"
+          >
+            Purchase
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

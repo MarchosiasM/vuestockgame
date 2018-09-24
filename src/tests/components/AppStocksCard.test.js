@@ -12,10 +12,13 @@ let store;
 describe('Stock card', () => {
   beforeEach(() => {
     actions = {
-      handleSubmit: jest.fn(),
+      buyStocks: jest.fn(),
     };
     store = new Vuex.Store({
-      state: {},
+      state: {
+        funds: 10000,
+        personalPortfolio: [],
+      },
       actions,
     });
   });
@@ -23,7 +26,7 @@ describe('Stock card', () => {
     const wrapper = shallowMount(StockCard, { store, localVue });
     wrapper.setProps({
       name: 'Pied Piper',
-      value: 26,
+      price: 26,
     });
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -31,7 +34,7 @@ describe('Stock card', () => {
     const wrapper = shallowMount(StockCard, { store, localVue });
     wrapper.setProps({
       name: 'Pied Piper',
-      value: 26,
+      price: 26,
     });
     expect(wrapper.html()).toContain('Pied Piper');
     expect(wrapper.html()).toContain('26');
@@ -40,12 +43,12 @@ describe('Stock card', () => {
     const wrapper = shallowMount(StockCard, { store, localVue });
     wrapper.setProps({
       name: 'Pied Piper',
-      value: 26,
+      price: 26,
     });
     const input = wrapper.find('input');
     input.element.value = 'Testing';
     const button = wrapper.find('button');
     button.trigger('click');
-    expect(actions.handleSubmit).toHaveBeenCalled();
+    expect(actions.buyStocks).toHaveBeenCalled();
   });
 });

@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Stock card renders properly 1`] = `
-<div>
-  
-  Pied Piper 26
-  
+<div
+  class="app-stocks-card"
+>
+  <p>
+    Stock: Pied Piper Price: 26
+  </p>
+   
   <div
     class="form-group"
   >
@@ -13,7 +16,11 @@ exports[`Stock card renders properly 1`] = `
       type="text"
     />
      
-    <button />
+    <button
+      class="btn btn-primary"
+    >
+      Purchase
+    </button>
   </div>
 </div>
 `;

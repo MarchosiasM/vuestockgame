@@ -1,9 +1,11 @@
 <template>
-  <div>
-    {{ name }} {{ value }}
+  <div class="app-stocks-card">
+    <p>Stock: {{ name }} Price: {{ price }}</p>
     <div class="form-group">
-      <input class="form-control" type="text" v-model="stockNo">
-      <button @click="handleSubmit"></button>
+      <input class="form-control" type="text" v-model="count">
+      <button 
+      class="btn btn-primary"
+      @click="handleSubmit">Purchase</button>
     </div>
   </div>
 </template>
@@ -12,21 +14,21 @@
 export default {
   props: {
     name: String,
-    value: Number
+    price: Number
   },
   data() {
     return {
-      stockNo: 0
+      count: 0
     };
   },
+  computed: {},
   methods: {
     handleSubmit() {
-      const fundsNo = this.value * this.stocksNo;
-      const { name, stockNo } = this;
-      this.$store.dispatch('buyStock', {
+      const { name, count, price } = this;
+      this.$store.dispatch('buyStocks', {
         name,
-        stockNo,
-        fundsNo
+        count,
+        price
       });
     }
   }

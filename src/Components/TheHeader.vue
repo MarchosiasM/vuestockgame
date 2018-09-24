@@ -45,9 +45,12 @@
 <script>
 export default {
   data() {
-    return {
-      funds: 10000
-    };
+    return {};
+  },
+  computed: {
+    funds() {
+      return this.$store.state.funds;
+    }
   }
 };
 </script>
