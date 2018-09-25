@@ -9,7 +9,7 @@ exports[`App Stocks renders correctly 1`] = `
   >
     <div>
       <div
-        class="app-stocks-card"
+        class="app-stocks-card col-md-6"
       >
         <p>
           Stock: google Price: 130
@@ -33,7 +33,7 @@ exports[`App Stocks renders correctly 1`] = `
     </div>
     <div>
       <div
-        class="app-stocks-card"
+        class="app-stocks-card col-md-6"
       >
         <p>
           Stock: amd Price: 130
@@ -57,7 +57,7 @@ exports[`App Stocks renders correctly 1`] = `
     </div>
     <div>
       <div
-        class="app-stocks-card"
+        class="app-stocks-card col-md-6"
       >
         <p>
           Stock: tesla Price: 130
@@ -81,7 +81,7 @@ exports[`App Stocks renders correctly 1`] = `
     </div>
     <div>
       <div
-        class="app-stocks-card"
+        class="app-stocks-card col-md-6"
       >
         <p>
           Stock: yahoo Price: 130

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-portfolio-card col-md-6">
     <p>Name: {{ name }} || Count: {{ count }} || Price: {{ price }} </p>
     <div class="form-group">
       <input v-model="sellCount" type="text">

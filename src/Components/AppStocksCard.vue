@@ -1,5 +1,5 @@
 <template>
-  <div class="app-stocks-card">
+  <div class="app-stocks-card col-md-6">
     <p>Stock: {{ name }} Price: {{ price }}</p>
     <div class="form-group">
       <input class="form-control" type="text" v-model="count">

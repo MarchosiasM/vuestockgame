@@ -2,7 +2,7 @@
 
 exports[`Stock card renders properly 1`] = `
 <div
-  class="app-stocks-card"
+  class="app-stocks-card col-md-6"
 >
   <p>
     Stock: Pied Piper Price: 26

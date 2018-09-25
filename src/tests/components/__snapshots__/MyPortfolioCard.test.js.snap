@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MyPortfolioCard renders correctly 1`] = `
-<div>
+<div
+  class="my-portfolio-card col-md-6"
+>
   <p>
     Name: Pied Piper || Count: 30 || Price: 26 
   </p>

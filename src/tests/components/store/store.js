@@ -4,6 +4,11 @@ import { createLocalVue } from '@vue/test-utils';
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
+const actions = {
+  sellStocks: jest.fn(),
+  buyStocks: jest.fn(),
+};
+
 const store = new Vuex.Store({
   state: {
     funds: 10000,
@@ -31,12 +36,9 @@ const store = new Vuex.Store({
       },
     ],
   },
-  actions: {
-    sellStocks: jest.fn(),
-    buyStocks: jest.fn(),
-  },
+  actions,
 });
 
-const exports = { localVue, store };
+const exports = { localVue, store, actions };
 
 export default exports;

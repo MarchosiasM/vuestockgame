@@ -37,7 +37,7 @@ const store = new Vuex.Store({
     withdrawFunds(state, value) {
       state.funds -= value;
     },
-    addStocks(state, payload) {
+    changeStocks(state, payload) {
       if (state.personalPortfolio[payload.name] === undefined) {
         state.personalPortfolio.push(payload);
       } else {
@@ -55,7 +55,18 @@ const store = new Vuex.Store({
       }
       const price = payload.count * payload.price;
       context.commit('withdrawFunds', price);
-      context.commit('addStocks', {
+      context.commit('changeStocks', {
+        name: payload.name,
+        amount: payload.count,
+      });
+    },
+    sellStocks(context, payload) {
+      if (payload.count > 0) {
+        return;
+      }
+      const price = payload.count * payload.price;
+      context.commit('depositFunds', price);
+      context.commit('changeStocks', {
         name: payload.name,
         amount: payload.count,
       });
