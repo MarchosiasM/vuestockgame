@@ -14,10 +14,14 @@ describe('App Stocks', () => {
     const wrapper = mount(AppStocks, { store, localVue });
     expect(wrapper.element).toMatchSnapshot();
   });
+  it('renders the prices correctly', () => {
+    const wrapper = mount(AppStocks, { store, localVue });
+    expect(wrapper.html()).toContain('Price: 130');
+  });
   it('renders one "AppStocksCard" component for every Company in the state', () => {
     const wrapper = mount(AppStocks, { store, localVue });
     const { companies } = store.state;
     const stocksCards = wrapper.findAll('.app-stocks-card');
-    expect(stocksCards.wrappers).toHaveLength(companies.length);
+    expect(stocksCards.wrappers).toHaveLength(Object.keys(companies).length);
   });
 });

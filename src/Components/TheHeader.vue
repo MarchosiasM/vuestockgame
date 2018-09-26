@@ -18,9 +18,11 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" >
+            <router-link to="/portfolio">
+            <a class="nav-link" @click="$router.push('portfolio')">
               Portfolio
             </a>
+            </router-link>
           </li>
           <li class="nav-item ml-auto">
             <a class="nav-link">
@@ -49,7 +51,7 @@ export default {
   },
   computed: {
     funds() {
-      return this.$store.state.funds;
+      return this.$store.getters.funds;
     }
   }
 };

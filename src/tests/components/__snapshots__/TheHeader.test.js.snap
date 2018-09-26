@@ -56,13 +56,17 @@ exports[`Component renders properly 1`] = `
       <li
         class="nav-item"
       >
-        <a
-          class="nav-link"
+        <router-link-stub
+          to="/portfolio"
         >
-          
+          <a
+            class="nav-link"
+          >
+            
           Portfolio
         
-        </a>
+          </a>
+        </router-link-stub>
       </li>
        
       <li

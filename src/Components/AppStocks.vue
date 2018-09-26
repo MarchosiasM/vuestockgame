@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <div class="row">
-      <div v-for="company in companies" :key="company.index">
-        <app-stocks-card :name="company.name" :price="company.price">
+      <div v-for="company in companiesArray" :key="company.index">
+        <app-stocks-card 
+          :name="company.name" 
+          :price="company.price"
+          :index="company.index">
 
         </app-stocks-card>
       </div>
@@ -16,10 +19,13 @@ export default {
   components: {
     AppStocksCard
   },
+  computed: {
+    companiesArray() {
+      return this.$store.getters.fullCompanyData;
+    }
+  },
   data() {
-    return {
-      companies: this.$store.state.companies
-    };
+    return {};
   }
 };
 </script>

@@ -14,7 +14,8 @@
 export default {
   props: {
     name: String,
-    price: Number
+    price: Number,
+    index: Number
   },
   data() {
     return {
@@ -24,11 +25,12 @@ export default {
   computed: {},
   methods: {
     handleSubmit() {
-      const { name, count, price } = this;
+      const { name, count, price, index } = this;
       this.$store.dispatch('buyStocks', {
         name,
         count,
-        price
+        price,
+        index
       });
     }
   }

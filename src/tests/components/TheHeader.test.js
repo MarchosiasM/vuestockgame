@@ -1,22 +1,15 @@
-import { mount, createLocalVue } from '@vue/test-utils';
-import Vuex from 'vuex';
+import { mount } from '@vue/test-utils';
 import TheHeader from '../../Components/TheHeader.vue';
+import storeObj from './store/store';
 
-const localVue = createLocalVue();
-
-localVue.use(Vuex);
+const { store: impStore, localVue } = storeObj;
 
 let store;
 let stubs;
 
 describe('Component', () => {
   beforeEach(() => {
-    store = new Vuex.Store({
-      state: {
-        funds: 10000,
-        personalPortfolio: [],
-      },
-    });
+    store = Object.assign(impStore);
     stubs = ['router-link'];
   });
   it('renders properly', () => {
@@ -30,6 +23,6 @@ describe('Component', () => {
     const wrapper = mount(TheHeader, {
       stubs, store, localVue,
     });
-    expect(wrapper.vm.funds).toEqual(10000);
+    expect(wrapper.html()).toContain(10000);
   });
 });

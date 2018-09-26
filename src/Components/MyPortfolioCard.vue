@@ -2,7 +2,7 @@
   <div class="my-portfolio-card col-md-6">
     <p>Name: {{ name }} || Count: {{ count }} || Price: {{ price }} </p>
     <div class="form-group">
-      <input v-model="sellCount" type="text">
+      <input v-model.number="sellCount" type="text">
       <button 
         class="btn btn-primary"
         @click="handleSubmit"
@@ -21,15 +21,17 @@ export default {
   props: {
     name: String,
     price: Number,
-    count: Number
+    count: Number,
+    index: Number
   },
   methods: {
     handleSubmit() {
-      const { name, count, price } = this;
+      const { name, sellCount, price, index } = this;
       this.$store.dispatch('sellStocks', {
         name,
-        count,
-        price
+        count: sellCount,
+        price,
+        index
       });
     }
   }

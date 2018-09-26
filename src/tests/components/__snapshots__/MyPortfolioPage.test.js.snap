@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyPortfolioPage renders correctly 1`] = `
+<div
+  class="container"
+>
+  <div>
+    <div
+      class="my-portfolio-card col-md-6"
+    >
+      <p>
+        Name: google || Count: 30 || Price: 130 
+      </p>
+       
+      <div
+        class="form-group"
+      >
+        <input
+          type="text"
+        />
+         
+        <button
+          class="btn btn-primary"
+        >
+          Sell
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="my-portfolio-card col-md-6"
+    >
+      <p>
+        Name: amd || Count: 350 || Price: 130 
+      </p>
+       
+      <div
+        class="form-group"
+      >
+        <input
+          type="text"
+        />
+         
+        <button
+          class="btn btn-primary"
+        >
+          Sell
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="my-portfolio-card col-md-6"
+    >
+      <p>
+        Name: tesla || Count: 50 || Price: 130 
+      </p>
+       
+      <div
+        class="form-group"
+      >
+        <input
+          type="text"
+        />
+         
+        <button
+          class="btn btn-primary"
+        >
+          Sell
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

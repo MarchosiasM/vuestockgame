@@ -1,77 +1,48 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
+import actions from './actions';
+import getters from './getters';
+import mutations from './mutations';
 
 Vue.use(Vuex);
 
+
 const store = new Vuex.Store({
   state: {
+    day: 0,
+    saveStates: {
+
+    },
     funds: 10000,
-    personalPortfolio: [],
-    companies: [
-      {
+    personalPortfolio: {},
+    prices: {
+      google: 130,
+      amd: 130,
+      tesla: 130,
+      yahoo: 130,
+    },
+    companies: {
+      google: {
         index: 1,
         name: 'google',
-        price: 130,
       },
-      {
+      amd: {
         index: 2,
         name: 'amd',
-        price: 130,
       },
-      {
+      tesla: {
         index: 3,
         name: 'tesla',
-        price: 130,
       },
-      {
+      yahoo: {
         index: 4,
         name: 'yahoo',
-        price: 130,
       },
-    ],
-  },
-  mutations: {
-    depositFunds(state, value) {
-      state.funds += value;
-    },
-    withdrawFunds(state, value) {
-      state.funds -= value;
-    },
-    changeStocks(state, payload) {
-      if (state.personalPortfolio[payload.name] === undefined) {
-        state.personalPortfolio.push(payload);
-      } else {
-        state.personalPortfolio[payload.name].count += payload.count;
-      }
     },
   },
-  actions: {
-    depositFunds(context, payload) {
-      context.commit('depositFunds', payload.value);
-    },
-    buyStocks(context, payload) {
-      if (payload.count < 0) {
-        return;
-      }
-      const price = payload.count * payload.price;
-      context.commit('withdrawFunds', price);
-      context.commit('changeStocks', {
-        name: payload.name,
-        amount: payload.count,
-      });
-    },
-    sellStocks(context, payload) {
-      if (payload.count > 0) {
-        return;
-      }
-      const price = payload.count * payload.price;
-      context.commit('depositFunds', price);
-      context.commit('changeStocks', {
-        name: payload.name,
-        amount: payload.count,
-      });
-    },
-  },
+  getters,
+  mutations,
+  actions,
 });
 
 export default store;
