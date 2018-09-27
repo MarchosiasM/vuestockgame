@@ -1,4 +1,8 @@
-const mutations = {
+import Vue from 'vue';
+
+const diceRoll = multiplier => Math.floor(Math.random() * multiplier);
+
+export default {
   depositFunds(state, value) {
     state.funds += value;
   },
@@ -9,13 +13,19 @@ const mutations = {
     const { personalPortfolio } = state;
     const { name, count } = payload;
     if (personalPortfolio[name] === undefined) {
-      personalPortfolio[name] = payload;
+      Vue.set(personalPortfolio, name, payload);
     } else {
       const extract = personalPortfolio[name];
       extract.count += count;
-      personalPortfolio[name] = extract;
+      Vue.set(personalPortfolio, name, extract);
     }
   },
+  nextDay(state) {
+    state.day += 1;
+    const newPrices = JSON.parse(JSON.stringify(state.prices));
+    Object.keys(newPrices).forEach((key) => {
+      newPrices[key] = diceRoll(30) - diceRoll(25);
+    });
+    state.prices = Object.assign({}, newPrices);
+  },
 };
-
-export default mutations;

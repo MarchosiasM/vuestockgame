@@ -19,6 +19,11 @@ export default {
   components: {
     AppStocksCard
   },
+  methods: {
+    getCompaniesArray() {
+      return this.$store.getters.fullCompanyData;
+    }
+  },
   computed: {
     companiesArray() {
       return this.$store.getters.fullCompanyData;

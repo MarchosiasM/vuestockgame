@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">53.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/12</span>
+        <span class='fraction'>8/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/8</span>
+        <span class='fraction'>5/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/10</span>
+        <span class='fraction'>6/12</span>
       </div>
     </div>
   </div>
@@ -70,25 +70,31 @@
 25
 26
 27
-28</td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+28
+29
+30
+31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -102,23 +108,26 @@
   personalPortfolio: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.personalPortfolio,</span>
   companies: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.companies,</span>
   prices: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.prices,</span>
-  hydrateMyStocks: <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {
-    const { personalPortfolio, prices } = <span class="cstat-no" title="statement not covered" >state;</span>
-<span class="cstat-no" title="statement not covered" >    return personalPortfolio.map(<span class="fstat-no" title="function not covered" >va</span>lue =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
-      name: value[1].name,
-      index: value[1].index,
-      count: value[1].count,
-      price: prices[value[1].name],
+  update: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.update,</span>
+  fullPortfolioData: (state) =&gt; {
+    const { personalPortfolio, prices } = state;
+    return Object.keys(personalPortfolio).map(key =&gt; ({
+      name: key,
+      index: personalPortfolio[key].index,
+      count: personalPortfolio[key].count,
+      price: prices[key],
     }));
+  },
+  nonZeroPortfolioData: <span class="fstat-no" title="function not covered" >(s</span>tate, impGetters) =&gt; {
+    const list = <span class="cstat-no" title="statement not covered" >impGetters.fullPortfolioData;</span>
+<span class="cstat-no" title="statement not covered" >    return list.filter(<span class="fstat-no" title="function not covered" >en</span>try =&gt; <span class="cstat-no" title="statement not covered" >entry.count &gt; 0)</span>;</span>
   },
   fullCompanyData: (state) =&gt; {
     const { companies, prices } = state;
-    console.log(Array.from(companies));
-    return Array.from(companies).map(value =&gt; ({
-      name: value[1].name,
-      index: value[1].index,
-      count: value[1].count,
-      price: prices[value[1].name],
+    return Object.keys(companies).map(key =&gt; ({
+      name: key,
+      index: companies[key].index,
+      price: prices[key],
     }));
   },
 };
@@ -130,7 +139,7 @@ export default getters;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Sep 25 2018 18:11:24 GMT-0700 (Pacific Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 16:27:03 GMT-0700 (Pacific Daylight Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

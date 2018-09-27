@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">6.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/12</span>
+        <span class='fraction'>1/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">6.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/12</span>
+        <span class='fraction'>1/15</span>
       </div>
     </div>
   </div>
@@ -73,26 +73,48 @@
 28
 29
 30
-31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,30 +126,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const actions = {
+  // newDay(context, payload) {
+&nbsp;
+  // },
   depositFunds(context, payload) {
 <span class="cstat-no" title="statement not covered" >    context.commit('depositFunds', payload.value);</span>
   },
   buyStocks(context, payload) {
-<span class="cstat-no" title="statement not covered" >    if (payload.count &lt; 0) {</span>
+    const {
+      name, count, price, index,
+    } = <span class="cstat-no" title="statement not covered" >payload;</span>
+<span class="cstat-no" title="statement not covered" >    if (count &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('Unable to complete sale');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
-    const price = <span class="cstat-no" title="statement not covered" >payload.count * payload.price;</span>
-<span class="cstat-no" title="statement not covered" >    context.commit('withdrawFunds', price);</span>
+<span class="cstat-no" title="statement not covered" >    context.commit('withdrawFunds', count * price);</span>
 <span class="cstat-no" title="statement not covered" >    context.commit('changeStocks', {</span>
-      name: payload.name,
-      amount: payload.count,
+      index,
+      name,
+      count: parseInt((count), 10),
     });
   },
   sellStocks(context, payload) {
-<span class="cstat-no" title="statement not covered" >    if (payload.count &lt; 0 || payload.count &gt; this.personalPortfolio[payload.name].count) {</span>
+    const { personalPortfolio } = <span class="cstat-no" title="statement not covered" >context.state;</span>
+    const {
+      name, count, price, index,
+    } = <span class="cstat-no" title="statement not covered" >payload;</span>
+<span class="cstat-no" title="statement not covered" >    if (count &lt; 0 || count &gt; personalPortfolio[name].count) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('Unable to complete sale');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
-    const price = <span class="cstat-no" title="statement not covered" >payload.count * payload.price;</span>
-<span class="cstat-no" title="statement not covered" >    context.commit('depositFunds', price);</span>
+<span class="cstat-no" title="statement not covered" >    context.commit('depositFunds', count * price);</span>
 <span class="cstat-no" title="statement not covered" >    context.commit('changeStocks', {</span>
-      index: payload.index,
-      name: payload.name,
-      amount: (-1) * (payload.count),
+      index,
+      name,
+      count: (-1) * parseInt((count), 10),
     });
   },
 };
@@ -139,7 +172,7 @@ export default actions;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Sep 25 2018 18:11:24 GMT-0700 (Pacific Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 16:18:26 GMT-0700 (Pacific Daylight Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

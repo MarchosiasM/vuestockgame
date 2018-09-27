@@ -13,6 +13,10 @@ const getters = {
       price: prices[key],
     }));
   },
+  nonZeroPortfolioData: (state, impGetters) => {
+    const list = impGetters.fullPortfolioData;
+    return list.filter(entry => entry.count > 0);
+  },
   fullCompanyData: (state) => {
     const { companies, prices } = state;
     return Object.keys(companies).map(key => ({

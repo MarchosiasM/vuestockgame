@@ -33,6 +33,9 @@ const actions = {
       count: (-1) * parseInt((count), 10),
     });
   },
+  nextDay({ commit }) {
+    commit('nextDay');
+  },
 };
 
 export default actions;
