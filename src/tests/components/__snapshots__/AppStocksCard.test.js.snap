@@ -2,25 +2,52 @@
 
 exports[`Stock card renders properly 1`] = `
 <div
-  class="app-stocks-card col-md-6"
+  class="app-stocks-card col-sm-6 col-md-4"
 >
-  <p>
-    Stock: Pied Piper Price: 26
-  </p>
-   
   <div
-    class="form-group"
+    class="panel panel-success"
   >
-    <input
-      class="form-control"
-      type="text"
-    />
-     
-    <button
-      class="btn btn-primary"
+    <div
+      class="panel-heading"
     >
-      Purchase
-    </button>
+      <h3
+        class="panel-title"
+      >
+        
+        Pied Piper 
+        
+        <small>
+          Price: 26
+        
+        </small>
+      </h3>
+       
+      <div
+        class="panel-body"
+      >
+        <div
+          class="pull-left"
+        >
+          <input
+            class="form-control"
+            placeholder="Quantity"
+            type="number"
+          />
+        </div>
+         
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn btn-success"
+          >
+            
+          Buy
+        
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

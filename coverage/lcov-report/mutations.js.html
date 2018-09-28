@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for Section 18/src/Components/AppHome.vue</title>
+    <title>Code coverage report for mutations.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\..\base.css" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\..\sort-arrow-sprite.png);
+            background-image: url(sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\index.html">All files</a> / <a href="index.html">Section 18/src/Components</a> AppHome.vue
+      <a href="index.html">All files</a> mutations.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>15/15</span>
       </div>
     </div>
   </div>
@@ -65,60 +65,87 @@
 20
 21
 22
-23</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div class="container"&gt;
-    &lt;h1&gt;Trade or View Your Portfolio&lt;/h1&gt;
-    &lt;p&gt;You may Save &amp; Load your Data&lt;/p&gt;
-    &lt;p&gt;Click on 'End Day' to begin a new Day!&lt;/p&gt;
-    &lt;hr&gt;
-    &lt;h2&gt;Your Funds: {{ funds }}&lt;/h2&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
 &nbsp;
-&lt;script&gt;
+const diceRoll = multiplier =&gt; Math.floor(Math.random() * multiplier);
+&nbsp;
 export default {
-  data() {
-    return {};
+  depositFunds(state, value) {
+    state.funds += value;
   },
-  computed: {
-    funds() {
-      return this.$store.state.funds;
+  withdrawFunds(state, value) {
+    state.funds -= value;
+  },
+  changeStocks(state, payload) {
+    const { personalPortfolio } = state;
+    const { name, count } = payload;
+    if (personalPortfolio[name] === undefined) {
+      Vue.set(personalPortfolio, name, payload);
+    } else {
+      const extract = personalPortfolio[name];
+      extract.count += count;
+      Vue.set(personalPortfolio, name, extract);
     }
-  }
+  },
+  nextDay(state) {
+    state.day += 1;
+    const newPrices = JSON.parse(JSON.stringify(state.prices));
+    Object.keys(newPrices).forEach((key) =&gt; {
+      newPrices[key] += diceRoll(30) - diceRoll(25);
+    });
+    state.prices = Object.assign({}, newPrices);
+  },
 };
-&lt;/script&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 27 2018 20:37:22 GMT-0700 (Pacific Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 27 2018 14:47:06 GMT-0700 (Pacific Daylight Time)
 </div>
 </div>
-<script src="..\..\..\prettify.js"></script>
+<script src="prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -126,6 +153,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\..\..\sorter.js"></script>
+<script src="sorter.js"></script>
 </body>
 </html>

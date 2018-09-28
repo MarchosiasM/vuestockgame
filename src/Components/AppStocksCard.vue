@@ -1,11 +1,31 @@
 <template>
-  <div class="app-stocks-card col-md-6">
-    <p>Stock: {{ name }} Price: {{ price }}</p>
-    <div class="form-group">
-      <input class="form-control" type="text" v-model="count">
-      <button 
-      class="btn btn-primary"
-      @click="handleSubmit">Purchase</button>
+  <div class="col-sm-6 col-md-3 app-stocks-card card m-2">
+    <div class="card-header">
+        <h3 class="Card-Title">
+          {{ name }} 
+          <small>Price: {{ price }}
+          </small>
+        </h3>
+        <div class="card-body">
+          <div class="pull-left">
+            <div class="form-group">
+
+            <input 
+              type="number" 
+              class="form-control"
+              placeholder="Quantity"
+              v-model="count"
+              >
+          </div>
+            </div>
+          <div class="pull-right"
+          >
+          <button class="btn btn-primary"
+            @click="handleSubmit">
+            Buy
+          </button>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -19,7 +39,7 @@ export default {
   },
   data() {
     return {
-      count: 0
+      count: ''
     };
   },
   computed: {},
@@ -36,3 +56,6 @@ export default {
   }
 };
 </script>
+
+<style>
+</style>

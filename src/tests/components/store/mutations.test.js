@@ -7,9 +7,7 @@ describe('Mutations', () => {
   let value;
   beforeEach(() => {
     originalFunds = 10000;
-    state = {
-      funds: originalFunds,
-    };
+    state = storeObj.createNewState();
     value = Math.floor(Math.random() * 100);
   });
   afterEach(() => {
@@ -45,7 +43,7 @@ describe('Mutations', () => {
         count: 3,
       };
       state = storeObj.createNewState();
-      personalPortfolio = state.personalPortfolio;
+      personalPortfolio = state.personalPortfolio; //eslint-disable-line
     });
     it('adds a new entry to personal portfolio if there isn\'t one there', () => {
       expect(personalPortfolio.testy).toBeUndefined();
@@ -62,6 +60,17 @@ describe('Mutations', () => {
       payload.count *= -1;
       mutations.changeStocks(state, payload);
       expect(personalPortfolio.google.count).toEqual(27);
+    });
+  });
+
+  describe('nextDay()', () => {
+    it('Should change the prices in the price object', () => {
+      const { prices } = state;
+      const priceSnapshot = JSON.parse(JSON.stringify(prices));
+      expect(priceSnapshot).not.toBe(state.prices);
+      expect(priceSnapshot).toEqual(state.prices);
+      mutations.nextDay(state);
+      expect(state.prices).not.toEqual(priceSnapshot);
     });
   });
 });

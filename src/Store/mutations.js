@@ -24,7 +24,11 @@ export default {
     state.day += 1;
     const newPrices = JSON.parse(JSON.stringify(state.prices));
     Object.keys(newPrices).forEach((key) => {
-      newPrices[key] = diceRoll(30) - diceRoll(25);
+      if (diceRoll(20) === 1 && newPrices[key] > 90) {
+        newPrices[key] += diceRoll(30) - diceRoll(100);
+      } else {
+        newPrices[key] += diceRoll(30) - diceRoll(25);
+      }
     });
     state.prices = Object.assign({}, newPrices);
   },

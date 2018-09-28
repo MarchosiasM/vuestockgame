@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for Section 18/src/Components/AppStocks.vue</title>
+    <title>Code coverage report for Section 18/src/Store/getters.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\..\base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\index.html">All files</a> / <a href="index.html">Section 18/src/Components</a> AppStocks.vue
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">Section 18/src/Store</a> getters.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">73.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>11/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">63.64% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>7/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>8/12</span>
       </div>
     </div>
   </div>
@@ -73,13 +73,15 @@
 28
 29
 30
-31
-32
-33</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -88,57 +90,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-    &lt;div class="row m-3"&gt;
-        &lt;app-stocks-card v-for="company in companiesArray" :key="company.index"
-          :name="company.name" 
-          :price="company.price"
-          :index="company.index"&gt;
-&nbsp;
-        &lt;/app-stocks-card&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-&nbsp;
-&lt;script&gt;
-import AppStocksCard from './AppStocksCard.vue';
-export default {
-  components: {
-    AppStocksCard
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const getters = {
+  funds: state =&gt; state.funds,
+  personalPortfolio: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.personalPortfolio,</span>
+  companies: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.companies,</span>
+  prices: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.prices,</span>
+  update: <span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.update,</span>
+  fullPortfolioData: (state) =&gt; {
+    const { personalPortfolio, prices } = state;
+    return Object.keys(personalPortfolio).map(key =&gt; ({
+      name: key,
+      index: personalPortfolio[key].index,
+      count: personalPortfolio[key].count,
+      price: prices[key],
+    }));
   },
-  methods: {
-<span class="fstat-no" title="function not covered" >    getCompaniesArray() {</span>
-<span class="cstat-no" title="statement not covered" >      return this.$store.getters.fullCompanyData;</span>
-    }
+  nonZeroPortfolioData: (state, impGetters) =&gt; {
+    const list = impGetters.fullPortfolioData;
+    return list.filter(entry =&gt; entry.count &gt; 0);
   },
-  computed: {
-    companiesArray() {
-      return this.$store.getters.fullCompanyData;
-    }
+  fullCompanyData: (state) =&gt; {
+    const { companies, prices } = state;
+    return Object.keys(companies).map(key =&gt; ({
+      name: key,
+      index: companies[key].index,
+      price: prices[key],
+    }));
   },
-  data() {
-    return {};
-  }
 };
-&lt;/script&gt;
+&nbsp;
+export default getters;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

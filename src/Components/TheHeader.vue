@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <router-link to="/" href="#" class="navbar-brand" @click="$router.push('home')"><a>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <router-link to="/" class="navbar-brand"><a>
         Stocks App
         </a></router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -10,22 +10,20 @@
         </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link to="/stocks">
-            <a class="nav-link" @click="$router.push('stocks')">
+            <router-link to="/stocks" activeClass="active" tag="li">
+            <a class="nav-link">
               Stocks
             </a>
             </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/portfolio">
-            <a class="nav-link" @click="$router.push('portfolio')">
+            <router-link to="/portfolio" activeClass="active" tag="li">
+            <a class="nav-link">
               Portfolio
             </a>
             </router-link>
-          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item ml-auto">
-            <a class="nav-link">
+            <a class="nav-link" @click="endDay">
               End Day
             </a>
           </li>
@@ -52,6 +50,11 @@ export default {
   computed: {
     funds() {
       return this.$store.getters.funds;
+    }
+  },
+  methods: {
+    endDay() {
+      this.$store.dispatch('nextDay');
     }
   }
 };

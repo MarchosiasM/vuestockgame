@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for Section 18/src/Store/index.js</title>
+    <title>Code coverage report for Section 18/src/Components/MyPortfolioPage.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\..\base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\index.html">All files</a> / <a href="index.html">Section 18/src/Store</a> index.js
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">Section 18/src/Components</a> MyPortfolioPage.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>2/4</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -75,32 +75,7 @@
 30
 31
 32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+33</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,6 +90,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,71 +98,47 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vuex from 'vuex';
-import Vue from 'vue';
-import actions from './actions';
-import getters from './getters';
-import mutations from './mutations';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="container"&gt;
+    &lt;div v-for="company in nonZeroStocks" :key="company.index"&gt;
+      &lt;my-portfolio-card
+        :name="company.name"
+        :count="company.count"
+        :price="company.price"
+        :index="company.index"&gt;
 &nbsp;
-Vue.use(Vuex);
+      &lt;/my-portfolio-card&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 &nbsp;
-&nbsp;
-const store = new Vuex.Store({
-  state: {
-    day: 0,
-    saveStates: {
-&nbsp;
-    },
-    funds: 10000,
-    personalPortfolio: {},
-    prices: {
-      google: 130,
-      amd: 130,
-      tesla: 130,
-      yahoo: 130,
-    },
-    companies: {
-      google: {
-        index: 1,
-        name: 'google',
-      },
-      amd: {
-        index: 2,
-        name: 'amd',
-      },
-      tesla: {
-        index: 3,
-        name: 'tesla',
-      },
-      yahoo: {
-        index: 4,
-        name: 'yahoo',
-      },
-    },
+&lt;script&gt;
+import MyPortfolioCard from './MyPortfolioCard.vue';
+export default {
+  components: {
+    MyPortfolioCard
   },
-  getters,
-  mutations,
-  actions,
-});
-&nbsp;
-export default store;
+  methods: {},
+  computed: {
+<span class="fstat-no" title="function not covered" >    myStocks() {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('My stocks is updated');</span>
+<span class="cstat-no" title="statement not covered" >      return this.$store.getters.fullPortfolioData;</span>
+    },
+    nonZeroStocks() {
+      return this.$store.getters.nonZeroPortfolioData;
+    }
+  }
+};
+&lt;/script&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

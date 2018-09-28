@@ -1,105 +1,207 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Stocks renders correctly 1`] = `
-<div
-  class="container"
->
-  <div
-    class="row"
-  >
-    <div>
+<div>
+  <div>
+    <div
+      class="app-stocks-card col-sm-6 col-md-4"
+    >
       <div
-        class="app-stocks-card col-md-6"
+        class="panel panel-success"
       >
-        <p>
-          Stock: google Price: 130
-        </p>
-         
         <div
-          class="form-group"
+          class="panel-heading"
         >
-          <input
-            class="form-control"
-            type="text"
-          />
-           
-          <button
-            class="btn btn-primary"
+          <h3
+            class="panel-title"
           >
-            Purchase
-          </button>
+            
+        google 
+        
+            <small>
+              Price: 130
+        
+            </small>
+          </h3>
+           
+          <div
+            class="panel-body"
+          >
+            <div
+              class="pull-left"
+            >
+              <input
+                class="form-control"
+                placeholder="Quantity"
+                type="number"
+              />
+            </div>
+             
+            <div
+              class="pull-right"
+            >
+              <button
+                class="btn btn-success"
+              >
+                
+          Buy
+        
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
+  </div>
+  <div>
+    <div
+      class="app-stocks-card col-sm-6 col-md-4"
+    >
       <div
-        class="app-stocks-card col-md-6"
+        class="panel panel-success"
       >
-        <p>
-          Stock: amd Price: 130
-        </p>
-         
         <div
-          class="form-group"
+          class="panel-heading"
         >
-          <input
-            class="form-control"
-            type="text"
-          />
-           
-          <button
-            class="btn btn-primary"
+          <h3
+            class="panel-title"
           >
-            Purchase
-          </button>
+            
+        amd 
+        
+            <small>
+              Price: 130
+        
+            </small>
+          </h3>
+           
+          <div
+            class="panel-body"
+          >
+            <div
+              class="pull-left"
+            >
+              <input
+                class="form-control"
+                placeholder="Quantity"
+                type="number"
+              />
+            </div>
+             
+            <div
+              class="pull-right"
+            >
+              <button
+                class="btn btn-success"
+              >
+                
+          Buy
+        
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
+  </div>
+  <div>
+    <div
+      class="app-stocks-card col-sm-6 col-md-4"
+    >
       <div
-        class="app-stocks-card col-md-6"
+        class="panel panel-success"
       >
-        <p>
-          Stock: tesla Price: 130
-        </p>
-         
         <div
-          class="form-group"
+          class="panel-heading"
         >
-          <input
-            class="form-control"
-            type="text"
-          />
-           
-          <button
-            class="btn btn-primary"
+          <h3
+            class="panel-title"
           >
-            Purchase
-          </button>
+            
+        tesla 
+        
+            <small>
+              Price: 130
+        
+            </small>
+          </h3>
+           
+          <div
+            class="panel-body"
+          >
+            <div
+              class="pull-left"
+            >
+              <input
+                class="form-control"
+                placeholder="Quantity"
+                type="number"
+              />
+            </div>
+             
+            <div
+              class="pull-right"
+            >
+              <button
+                class="btn btn-success"
+              >
+                
+          Buy
+        
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
+  </div>
+  <div>
+    <div
+      class="app-stocks-card col-sm-6 col-md-4"
+    >
       <div
-        class="app-stocks-card col-md-6"
+        class="panel panel-success"
       >
-        <p>
-          Stock: yahoo Price: 130
-        </p>
-         
         <div
-          class="form-group"
+          class="panel-heading"
         >
-          <input
-            class="form-control"
-            type="text"
-          />
-           
-          <button
-            class="btn btn-primary"
+          <h3
+            class="panel-title"
           >
-            Purchase
-          </button>
+            
+        yahoo 
+        
+            <small>
+              Price: 130
+        
+            </small>
+          </h3>
+           
+          <div
+            class="panel-body"
+          >
+            <div
+              class="pull-left"
+            >
+              <input
+                class="form-control"
+                placeholder="Quantity"
+                type="number"
+              />
+            </div>
+             
+            <div
+              class="pull-right"
+            >
+              <button
+                class="btn btn-success"
+              >
+                
+          Buy
+        
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

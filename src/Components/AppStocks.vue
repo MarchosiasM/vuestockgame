@@ -1,16 +1,12 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div v-for="company in companiesArray" :key="company.index">
-        <app-stocks-card 
+    <div class="row m-3">
+        <app-stocks-card v-for="company in companiesArray" :key="company.index"
           :name="company.name" 
           :price="company.price"
           :index="company.index">
 
         </app-stocks-card>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
