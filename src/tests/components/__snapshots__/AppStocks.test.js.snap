@@ -1,207 +1,205 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Stocks renders correctly 1`] = `
-<div>
-  <div>
+<div
+  class="row m-3"
+>
+  <div
+    class="col-sm-6 col-md-4 app-stocks-card card m-2"
+  >
     <div
-      class="app-stocks-card col-sm-6 col-md-4"
+      class="card-header"
     >
-      <div
-        class="panel panel-success"
+      <h3
+        class="Card-Title"
       >
-        <div
-          class="panel-heading"
-        >
-          <h3
-            class="panel-title"
-          >
-            
+        
         google 
+      </h3>
+       
+      <small>
+        Price: 130
         
-            <small>
-              Price: 130
-        
-            </small>
-          </h3>
-           
+      </small>
+       
+      <div
+        class="card-body"
+      >
+        <div
+          class="pull-left"
+        >
           <div
-            class="panel-body"
+            class="form-group"
           >
-            <div
-              class="pull-left"
-            >
-              <input
-                class="form-control"
-                placeholder="Quantity"
-                type="number"
-              />
-            </div>
-             
-            <div
-              class="pull-right"
-            >
-              <button
-                class="btn btn-success"
-              >
-                
+            <input
+              class="form-control"
+              placeholder="Quantity"
+              type="number"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn btn-primary"
+            disabled="disabled"
+          >
+            
           Buy
         
-              </button>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="col-sm-6 col-md-4 app-stocks-card card m-2"
+  >
     <div
-      class="app-stocks-card col-sm-6 col-md-4"
+      class="card-header"
     >
-      <div
-        class="panel panel-success"
+      <h3
+        class="Card-Title"
       >
-        <div
-          class="panel-heading"
-        >
-          <h3
-            class="panel-title"
-          >
-            
+        
         amd 
+      </h3>
+       
+      <small>
+        Price: 130
         
-            <small>
-              Price: 130
-        
-            </small>
-          </h3>
-           
+      </small>
+       
+      <div
+        class="card-body"
+      >
+        <div
+          class="pull-left"
+        >
           <div
-            class="panel-body"
+            class="form-group"
           >
-            <div
-              class="pull-left"
-            >
-              <input
-                class="form-control"
-                placeholder="Quantity"
-                type="number"
-              />
-            </div>
-             
-            <div
-              class="pull-right"
-            >
-              <button
-                class="btn btn-success"
-              >
-                
+            <input
+              class="form-control"
+              placeholder="Quantity"
+              type="number"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn btn-primary"
+            disabled="disabled"
+          >
+            
           Buy
         
-              </button>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="col-sm-6 col-md-4 app-stocks-card card m-2"
+  >
     <div
-      class="app-stocks-card col-sm-6 col-md-4"
+      class="card-header"
     >
-      <div
-        class="panel panel-success"
+      <h3
+        class="Card-Title"
       >
-        <div
-          class="panel-heading"
-        >
-          <h3
-            class="panel-title"
-          >
-            
+        
         tesla 
+      </h3>
+       
+      <small>
+        Price: 130
         
-            <small>
-              Price: 130
-        
-            </small>
-          </h3>
-           
+      </small>
+       
+      <div
+        class="card-body"
+      >
+        <div
+          class="pull-left"
+        >
           <div
-            class="panel-body"
+            class="form-group"
           >
-            <div
-              class="pull-left"
-            >
-              <input
-                class="form-control"
-                placeholder="Quantity"
-                type="number"
-              />
-            </div>
-             
-            <div
-              class="pull-right"
-            >
-              <button
-                class="btn btn-success"
-              >
-                
+            <input
+              class="form-control"
+              placeholder="Quantity"
+              type="number"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn btn-primary"
+            disabled="disabled"
+          >
+            
           Buy
         
-              </button>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="col-sm-6 col-md-4 app-stocks-card card m-2"
+  >
     <div
-      class="app-stocks-card col-sm-6 col-md-4"
+      class="card-header"
     >
+      <h3
+        class="Card-Title"
+      >
+        
+        yahoo 
+      </h3>
+       
+      <small>
+        Price: 130
+        
+      </small>
+       
       <div
-        class="panel panel-success"
+        class="card-body"
       >
         <div
-          class="panel-heading"
+          class="pull-left"
         >
-          <h3
-            class="panel-title"
+          <div
+            class="form-group"
+          >
+            <input
+              class="form-control"
+              placeholder="Quantity"
+              type="number"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="pull-right"
+        >
+          <button
+            class="btn btn-primary"
+            disabled="disabled"
           >
             
-        yahoo 
-        
-            <small>
-              Price: 130
-        
-            </small>
-          </h3>
-           
-          <div
-            class="panel-body"
-          >
-            <div
-              class="pull-left"
-            >
-              <input
-                class="form-control"
-                placeholder="Quantity"
-                type="number"
-              />
-            </div>
-             
-            <div
-              class="pull-right"
-            >
-              <button
-                class="btn btn-success"
-              >
-                
           Buy
         
-              </button>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>

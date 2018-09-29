@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">5.56% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>1/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">5.88% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>17/17</span>
+        <span class='fraction'>1/17</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -80,72 +80,72 @@
 35
 36</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
 &nbsp;
-const diceRoll = multiplier =&gt; Math.floor(Math.random() * multiplier);
+const diceRoll = <span class="fstat-no" title="function not covered" >mu</span>ltiplier =&gt; <span class="cstat-no" title="statement not covered" >Math.floor(Math.random() * multiplier);</span>
 &nbsp;
 export default {
   depositFunds(state, value) {
-    state.funds += value;
+<span class="cstat-no" title="statement not covered" >    state.funds += value;</span>
   },
   withdrawFunds(state, value) {
-    state.funds -= value;
+<span class="cstat-no" title="statement not covered" >    state.funds -= value;</span>
   },
   changeStocks(state, payload) {
-    const { personalPortfolio } = state;
-    const { name, count } = payload;
-    if (personalPortfolio[name] === undefined) {
-      Vue.set(personalPortfolio, name, payload);
+    const { personalPortfolio } = <span class="cstat-no" title="statement not covered" >state;</span>
+    const { name, count } = <span class="cstat-no" title="statement not covered" >payload;</span>
+<span class="cstat-no" title="statement not covered" >    if (personalPortfolio[name] === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >      Vue.set(personalPortfolio, name, payload);</span>
     } else {
-      const extract = personalPortfolio[name];
-      extract.count += count;
-      Vue.set(personalPortfolio, name, extract);
+      const extract = <span class="cstat-no" title="statement not covered" >personalPortfolio[name];</span>
+<span class="cstat-no" title="statement not covered" >      extract.count += count;</span>
+<span class="cstat-no" title="statement not covered" >      Vue.set(personalPortfolio, name, extract);</span>
     }
   },
   nextDay(state) {
-    state.day += 1;
-    const newPrices = JSON.parse(JSON.stringify(state.prices));
-    Object.keys(newPrices).forEach((key) =&gt; {
-      if (diceRoll(20) === 1 &amp;&amp; newPrices[key] &gt; 90) {
-        newPrices[key] += diceRoll(30) - diceRoll(100);
+<span class="cstat-no" title="statement not covered" >    state.day += 1;</span>
+    const newPrices = <span class="cstat-no" title="statement not covered" >JSON.parse(JSON.stringify(state.prices));</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(newPrices).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (diceRoll(20) === 1 &amp;&amp; newPrices[key] &gt; 90) {</span>
+<span class="cstat-no" title="statement not covered" >        newPrices[key] += diceRoll(30) - diceRoll(100);</span>
       } else {
-        newPrices[key] += diceRoll(30) - diceRoll(25);
+<span class="cstat-no" title="statement not covered" >        newPrices[key] += diceRoll(30) - diceRoll(25);</span>
       }
     });
-    state.prices = Object.assign({}, newPrices);
+<span class="cstat-no" title="statement not covered" >    state.prices = Object.assign({}, newPrices);</span>
   },
 };
 &nbsp;</pre></td></tr>
@@ -154,7 +154,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 27 2018 20:37:22 GMT-0700 (Pacific Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 28 2018 13:58:00 GMT-0700 (Pacific Daylight Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

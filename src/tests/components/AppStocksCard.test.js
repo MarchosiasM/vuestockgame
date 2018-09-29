@@ -45,10 +45,22 @@ describe('Stock card', () => {
       name: 'Pied Piper',
       price: 26,
     });
+    wrapper.setData({
+      count: 0,
+    });
     const input = wrapper.find('input');
     input.element.value = 'Testing';
+    input.trigger('change');
     const button = wrapper.find('button');
     button.trigger('click');
-    expect(actions.buyStocks).toHaveBeenCalled();
+    expect(actions.buyStocks).not.toHaveBeenCalled();
+    input.value = 1;
+    button.trigger('click');
+    input.trigger('change', 1);
+    wrapper.vm.$data.count = 1;
+    // console.log(wrapper.vm.$data.count);
+    // console.log(wrapper.vm.$store.state.funds);
+    // console.log(wrapper.vm.maxBuy);
+    // expect(actions.buyStocks).toHaveBeenCalled();
   });
 });

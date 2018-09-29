@@ -2,31 +2,31 @@
 
 exports[`Stock card renders properly 1`] = `
 <div
-  class="app-stocks-card col-sm-6 col-md-4"
+  class="col-sm-6 col-md-4 app-stocks-card card m-2"
 >
   <div
-    class="panel panel-success"
+    class="card-header"
   >
-    <div
-      class="panel-heading"
+    <h3
+      class="Card-Title"
     >
-      <h3
-        class="panel-title"
-      >
-        
+      
         Pied Piper 
+    </h3>
+     
+    <small>
+      Price: 26
         
-        <small>
-          Price: 26
-        
-        </small>
-      </h3>
-       
+    </small>
+     
+    <div
+      class="card-body"
+    >
       <div
-        class="panel-body"
+        class="pull-left"
       >
         <div
-          class="pull-left"
+          class="form-group"
         >
           <input
             class="form-control"
@@ -34,18 +34,19 @@ exports[`Stock card renders properly 1`] = `
             type="number"
           />
         </div>
-         
-        <div
-          class="pull-right"
+      </div>
+       
+      <div
+        class="pull-right"
+      >
+        <button
+          class="btn btn-primary"
+          disabled="disabled"
         >
-          <button
-            class="btn btn-success"
-          >
-            
+          
           Buy
         
-          </button>
-        </div>
+        </button>
       </div>
     </div>
   </div>
